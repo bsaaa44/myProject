@@ -1,0 +1,266 @@
+/* page {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+} */
+
+page {
+  background: #009966;
+}
+
+.center-block {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.avatar-block {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #fff;
+  border: 2rpx solid #cdcdcd;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+}
+
+.avatar-block image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.no-auth {
+  margin-top: 15rpx;
+}
+
+.name-block {
+  font-size: 30rpx;
+  color: #1f1f1f;
+  text-align: center;
+}
+
+.auth-btn {
+  width: 250rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  /* background: #67c23a;
+  color: #fff; */
+  background: #fff;
+  color: #009966;
+  font-size: 28rpx;
+}
+
+.btn-animation {
+  animation: btnAnimate 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes btnAnimate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.middleBlockAnimation {
+  animation: middleBlockAnimate 1s ease 600ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes middleBlockAnimate {
+  0% {
+    top: 30%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 80rpx;
+    transform: translate(-50%, 0);
+  }
+}
+
+.scroll-block {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 270rpx;
+  opacity: 0;
+  animation: listAnimate 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes listAnimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.list {
+  width: 690rpx;
+  height: 65vh;
+}
+
+.list .block {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 690rpx;
+  height: 80rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  background: #fff;
+  /* box-shadow: 0 2rpx 10rpx 3rpx #eee; */
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #009966;
+}
+.scroll-shadow {
+  height: 100rpx;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 153, 102, 0),
+    rgba(0, 153, 102, 1)
+  );
+  width: 100%;
+  position: absolute;
+  bottom: 150rpx;
+}
+
+/* .edit-block {
+  position: absolute;
+  width: 200rpx;
+  height: 60rpx;
+  background: #ff3300;
+  border-radius: 10rpx;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-width: 10rpx 10rpx 0;
+  border-style: solid;
+  border-color: #ff3300 transparent transparent; /*灰 透明 透明 */
+/* position: absolute;
+  bottom: -10rpx;
+  left: 50%;
+  transform: translateX(-50%); */
+/* }  */
+
+/* .block-animate {
+  animation: blockAnimation 200ms;
+}
+
+@keyframes blockAnimation {
+  0%,
+  25% {
+    bottom: 10rpx;
+  }
+  25%,
+  50% {
+    bottom: 0rpx;
+  }
+  50%,
+  75% {
+    bottom: 5rpx;
+  }
+  75%,
+  100% {
+    bottom: 0rpx;
+  }
+} */
+
+.edit-block {
+  position: absolute;
+  right: -140rpx;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.edit-block .delete-btn {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #ff0000;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+}
+.edit-block .delete-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.edit-block .edit-btn {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #ff0000;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+.edit-block .edit-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.blockAnimation-in {
+  animation: blockAnimate 500ms;
+  animation-fill-mode: forwards;
+}
+@keyframes blockAnimate {
+  from {
+  }
+  to {
+    right: 0;
+  }
+}
+.blockAnimation-out {
+  animation: blockAnimate2 500ms;
+  animation-fill-mode: forwards;
+}
+@keyframes blockAnimate2 {
+  from {
+  }
+  to {
+    right: 180rpx;
+  }
+}
+
+.add-btn {
+  width: 100rpx;
+  height: 100rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  position: absolute;
+  left: 50%;
+  bottom: 20rpx;
+  transform: translateX(-50%);
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  animation: listAnimate 1s linear;
+  animation-fill-mode: forwards;
+}
+.add-btn image {
+  width: 80rpx;
+  height: 80rpx;
+}

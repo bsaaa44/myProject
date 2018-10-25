@@ -1,0 +1,34 @@
+<view class='center-block {{startMiddleAnimate?"middleBlockAnimation":""}}'>
+  <view class='avatar-block'>
+    <image src='{{userInfo.avatarUrl}}' wx:if='{{userInfo}}'/>
+    <image class='no-auth' src='/images/user.png' wx:else/>
+  </view>
+  <button wx:if='{{showAuthBtn&&userInfo==""}}' class='auth-btn {{startBtnAnimate?"btn-animation":""}}' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权</button>
+  <!-- <button wx:if='{{showAuthBtn}}' class='auth-btn {{startBtnAnimate?"btn-animation":""}}' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权</button> -->
+</view>
+<view class='scroll-block' wx:if='{{showList}}'>
+  <scroll-view scroll-y class='list' >
+    <view class='block {{blockAnimateIndex==index?(showWhich=="animation-in"?"blockAnimation-in":"blockAnimation-out"):""}}' style="{{moveIndex == index?'right:'+touchMove+'rpx':''}}" wx:for='{{todos}}' wx:key='' data-index='{{index}}' bindtouchstart='bindBlockTouchStart' bindtouchmove='bindTouchMove' bindtouchend='bindBlockTouchEnd'>
+      <input focus='{{(inputFocusIndex==index?true:false)&&autoFocus}}' value='{{item.title}}' data-index='{{index}}' bindtap='bindInpTap' bindblur='bindInpBlur'/>
+      <view class='edit-block'>
+        <view class='delete-btn'>
+          <image src='/images/minus.png'/>
+        </view>
+        <view class='edit-btn'>
+          <image src='/images/edit.png'/>
+        </view>
+      </view>
+      <!-- <view class='edit-block'>
+        <view class='edit'></view>
+        <view class='delete'></view>
+      </view> -->
+    </view>
+  </scroll-view>
+  <view class='scroll-shadow'></view>
+</view>
+<view class='add-btn' wx:if='{{showList}}' bindtap='bindAddBtn'>
+  <image src='/images/add.png'/>
+</view>
+<!-- <view class='edit-block' style="top:{{top*2-70}}rpx;left:{{left*2-100}}rpx">
+  <view class='triangle'></view>
+</view> -->
